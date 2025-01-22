@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
 from GuessWord import GuessWord
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 usedWord = []
 
 @app.route('/guess', methods=['POST'])

@@ -47,6 +47,7 @@ installez flask pour lancer le projet :
 
 ```
 pip install flask
+pip install flask_cors
 ```
 
 et lancez le fichier API.py
