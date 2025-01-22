@@ -11,9 +11,14 @@ def home():
     if data["new"]:
         print("new")
         usedWord = []
-    word = GuessWord(data["guess"],data["yellowLetters"],data["usedLetters"],usedWord)
+    try:
+        word = GuessWord(data["guess"],data["yellowLetters"],data["usedLetters"],usedWord)
+        error = False
+    except:
+        word = ""
+        error = True
     usedWord.append(word)
-    return jsonify({"word": word})
+    return jsonify({"word": word,"error":error})
 
 
 if __name__ == '__main__':
